@@ -1,4 +1,3 @@
-markdown
 # 📱 Pemrograman Mobile
 
 <div align="center">
@@ -30,5 +29,5 @@ markdown
 
 Repository ini merupakan **journey pembelajaran pemrograman mobile** yang berisi kumpulan project, latihan, dan materi comprehensive mulai dari fundamental hingga advanced concepts menggunakan **Dart dan Flutter**.
 
-> *"Setiap baris kode adalah langkah menuju mastery dalam pengembangan mobile"* - **KN**
+> *"Setiap baris kode adalah langkah menuju mastery dalam pengembangan mobile"* - **kn**
 
