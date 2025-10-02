@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter layout: Khoir Karol Nurzuraidah dan 2341760048',
+      title: 'Flutter layout: Khoir Karol N 2341760048',
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Flutter layout demo'),
@@ -20,6 +20,8 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
 
 // import 'package:flutter/material.dart';
 
