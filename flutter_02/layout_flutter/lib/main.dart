@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
                 Text(
                   'Malang, Indonesia',
                   style: TextStyle(
-                    color: Colors.grey[500],
+                    color: Colors.grey[600],
                   ),
                 ),
               ],
@@ -44,13 +44,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false, // Menghilangkan banner debug
       title: "Flutter Layout: Khoir Karol N",
       home: Scaffold(
-        appBar: AppBar(title: const Text("Demo Image Section")),
+        appBar: AppBar(
+          title: const Text("Demo Image Section"),
+          backgroundColor: Colors.teal,
+        ),
         body: Builder(
           builder: (context) {
             // Warna utama dari tema
-            Color color = Theme.of(context).primaryColor;
+            final Color color = Theme.of(context).primaryColor;
 
             // Bagian button section
             Widget buttonSection = Row(
@@ -80,11 +84,11 @@ class MyApp extends StatelessWidget {
               ),
             );
 
-            // Gabung smua elemen ke dalam ListView
+            // Gabungkan semua elemen ke dalam ListView
             return ListView(
               children: [
                 Image.asset(
-                  'images/pantai.jpg', 
+                  'images/pantai.jpg',
                   width: 600,
                   height: 240,
                   fit: BoxFit.cover,
@@ -107,15 +111,13 @@ class MyApp extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(icon, color: color),
-        Container(
-          margin: const EdgeInsets.only(top: 8),
-          child: Text(
-            label,
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w400,
-              color: color,
-            ),
+        const SizedBox(height: 8),
+        Text(
+          label,
+          style: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
+            color: color,
           ),
         ),
       ],
