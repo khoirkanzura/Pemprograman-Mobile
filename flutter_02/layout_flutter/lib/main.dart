@@ -16,14 +16,14 @@ class MyApp extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'Oeschinen Lake Campground',
+                  'Pantai Gedung Tumpang',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Kandersteg, Switzerland',
+                  'Malang, Indonesia',
                   style: TextStyle(
                     color: Colors.grey[500],
                   ),
@@ -46,10 +46,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Flutter Layout: Khoir Karol N",
       home: Scaffold(
-        appBar: AppBar(title: const Text("Demo Text Section")),
+        appBar: AppBar(title: const Text("Demo Image Section")),
         body: Builder(
           builder: (context) {
-            // Warna utama dari tema
             Color color = Theme.of(context).primaryColor;
 
             // Bagian button section
@@ -62,12 +61,12 @@ class MyApp extends StatelessWidget {
               ],
             );
 
-            // Bagian text section (Langkah 1)
+            // Bagian text section
             Widget textSection = Container(
               padding: const EdgeInsets.all(32),
               child: const Text(
                 'Pantai Gedung Tumpang adalah salah satu destinasi wisata alam '
-                'yang menawan di pesisir Desa Pucanglaban, Kecamatan Pucanglaban, Kabupaten Tulungagung, Jawa Timur. Pantai ini terkenal '
+                'yang menawan di pesisir selatan Malang. Pantai ini terkenal '
                 'dengan tebing-tebing kokoh yang menjulang di tepi laut dan '
                 'hamparan pasir putih yang masih alami. Suasana tenang dan '
                 'pemandangan laut biru membuatnya cocok untuk tempat bersantai '
@@ -80,9 +79,18 @@ class MyApp extends StatelessWidget {
               ),
             );
 
-            // Gabungkan semua bagian ke body
+            // Bagian image section
+            Widget imageSection = Image.asset(
+             'images/pantai.jpg',
+              width: double.infinity,
+              height: 240,
+              fit: BoxFit.cover,
+            );
+
+            // Gabungkan semua bagian ke ListView
             return ListView(
               children: [
+                imageSection,
                 titleSection,
                 buttonSection,
                 textSection,
