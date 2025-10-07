@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'item_page.dart';
+
+void main() {
+  runApp(MyApp());
+}
 
 // Model data item
 class Item {
@@ -9,6 +12,25 @@ class Item {
   Item({required this.name, required this.price});
 }
 
+// Root widget
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Belanja App',
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomePage(),
+        '/item': (context) => ItemPage(),
+      },
+    );
+  }
+}
+
+// Halaman Home
 class HomePage extends StatelessWidget {
   HomePage({super.key});
 
@@ -34,7 +56,10 @@ class HomePage extends StatelessWidget {
             return InkWell(
               onTap: () {
                 Navigator.pushNamed(
-                  context,'/item',arguments: item,);
+                  context,
+                  '/item',
+                  arguments: item,
+                );
               },
               child: Card(
                 child: Container(
@@ -54,6 +79,48 @@ class HomePage extends StatelessWidget {
               ),
             );
           },
+        ),
+      ),
+    );
+  }
+}
+
+// Halaman Detail Item
+class ItemPage extends StatelessWidget {
+  const ItemPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final itemArgs = ModalRoute.of(context)!.settings.arguments as Item;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Item Detail',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.blue,
+      ),
+      body: Center(
+        child: Container(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(itemArgs.name,
+                      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                  const SizedBox(width: 8),
+                  Text(
+                    'Rp ${itemArgs.price}',
+                    style: const TextStyle(fontSize: 20, color: Colors.grey),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
