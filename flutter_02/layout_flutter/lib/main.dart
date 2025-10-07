@@ -80,11 +80,11 @@ class MyApp extends StatelessWidget {
               ),
             );
 
-            // 🔹 Gabungkan semua elemen ke dalam ListView
+            // Gabung smua elemen ke dalam ListView
             return ListView(
               children: [
                 Image.asset(
-                  'images/pantai.jpg', // ganti ke .png jika itu formatnya
+                  'images/pantai.jpg', 
                   width: 600,
                   height: 240,
                   fit: BoxFit.cover,
