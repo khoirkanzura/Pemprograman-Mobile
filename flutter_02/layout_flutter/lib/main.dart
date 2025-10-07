@@ -49,6 +49,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(title: const Text("Demo Image Section")),
         body: Builder(
           builder: (context) {
+            // Warna utama dari tema
             Color color = Theme.of(context).primaryColor;
 
             // Bagian button section
@@ -79,18 +80,15 @@ class MyApp extends StatelessWidget {
               ),
             );
 
-            // Bagian image section
-            Widget imageSection = Image.asset(
-             'images/pantai.jpg',
-              width: double.infinity,
-              height: 240,
-              fit: BoxFit.cover,
-            );
-
-            // Gabungkan semua bagian ke ListView
+            // 🔹 Gabungkan semua elemen ke dalam ListView
             return ListView(
               children: [
-                imageSection,
+                Image.asset(
+                  'images/pantai.jpg', // ganti ke .png jika itu formatnya
+                  width: 600,
+                  height: 240,
+                  fit: BoxFit.cover,
+                ),
                 titleSection,
                 buttonSection,
                 textSection,
@@ -102,7 +100,7 @@ class MyApp extends StatelessWidget {
     );
   }
 
-  // Method untuk membuat tombol
+  // Method untuk membuat kolom tombol
   Column _buildButtonColumn(Color color, IconData icon, String label) {
     return Column(
       mainAxisSize: MainAxisSize.min,
