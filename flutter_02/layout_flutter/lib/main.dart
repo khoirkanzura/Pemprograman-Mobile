@@ -5,7 +5,7 @@ void main() => runApp(const MyApp());
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // bagian titleSection
+  // Bagian title section
   Widget get titleSection {
     return Container(
       padding: const EdgeInsets.all(32),
@@ -46,11 +46,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Flutter Layout: Khoir Karol N",
       home: Scaffold(
-        appBar: AppBar(title: const Text("Khoir Karol Nurzuraidah")),
+        appBar: AppBar(title: const Text("Demo Text Section")),
         body: Builder(
           builder: (context) {
+            // Warna utama dari tema
             Color color = Theme.of(context).primaryColor;
 
+            // Bagian button section
             Widget buttonSection = Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -60,10 +62,30 @@ class MyApp extends StatelessWidget {
               ],
             );
 
-            return Column(
+            // Bagian text section (Langkah 1)
+            Widget textSection = Container(
+              padding: const EdgeInsets.all(32),
+              child: const Text(
+                'Pantai Gedung Tumpang adalah salah satu destinasi wisata alam '
+                'yang menawan di pesisir Desa Pucanglaban, Kecamatan Pucanglaban, Kabupaten Tulungagung, Jawa Timur. Pantai ini terkenal '
+                'dengan tebing-tebing kokoh yang menjulang di tepi laut dan '
+                'hamparan pasir putih yang masih alami. Suasana tenang dan '
+                'pemandangan laut biru membuatnya cocok untuk tempat bersantai '
+                'atau berfoto bersama keluarga dan teman. '
+                'Jangan lupa untuk menjaga kebersihan agar keindahan pantai ini '
+                'tetap terjaga 🌴.\n\n'
+                'Nama: Khoir Karol Nurzuraidah\n'
+                'NIM: 2341760048',
+                softWrap: true,
+              ),
+            );
+
+            // Gabungkan semua bagian ke body
+            return ListView(
               children: [
                 titleSection,
                 buttonSection,
+                textSection,
               ],
             );
           },
@@ -72,6 +94,7 @@ class MyApp extends StatelessWidget {
     );
   }
 
+  // Method untuk membuat tombol
   Column _buildButtonColumn(Color color, IconData icon, String label) {
     return Column(
       mainAxisSize: MainAxisSize.min,
