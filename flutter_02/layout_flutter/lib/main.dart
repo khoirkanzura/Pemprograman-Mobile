@@ -67,7 +67,7 @@ class MyApp extends StatelessWidget {
               padding: const EdgeInsets.all(32),
               child: const Text(
                 'Pantai Gedung Tumpang adalah salah satu destinasi wisata alam '
-                'yang menawan di pesisir selatan Malang. Pantai ini terkenal '
+                'yang menawan di pesisir Desa Pucanglaban, Kecamatan Pucanglaban, Kabupaten Tulungagung, Jawa Timur. Pantai ini terkenal '
                 'dengan tebing-tebing kokoh yang menjulang di tepi laut dan '
                 'hamparan pasir putih yang masih alami. Suasana tenang dan '
                 'pemandangan laut biru membuatnya cocok untuk tempat bersantai '
