@@ -78,7 +78,7 @@ Run aplikasi tersebut dengan tekan F5, maka hasilnya akan seperti berikut
 ### **2. Jelaskan maksud dari langkah 2 pada praktikum tersebut!**
 **Jawaban:**
 Maksudnya adalah agar project kita bisa menggunakan fitur tambahan dari plugin tersebut. Plugin ini tidak termasuk dalam bawaan Flutter, jadi perlu didaftarkan di file pubspec.yaml agar dapat diunduh dan digunakan.
-Setelah ditambahkan, Flutter akan mengenali class dan fungsi-fungsi yang ada di plugin auto_size_text, seperti AutoSizeText(), yang berfungsi untuk menampilkan teks dengan ukuran yang otomatis menyesuaikan ruang yang tersedia.
+Setelah ditambahkan, Flutter akan mengenali class dan fungsi-fungsi yang ada di plugin auto_size_text, seperti AutoSizeText(), yang berfungsi untuk menampilkan teks dengan ukuran yang otomatis menyesuaikan ruang yang tersedia.<br>
 Kesimpulan:
 Langkah ini bertujuan untuk menambahkan dependensi eksternal (plugin) ke dalam project Flutter supaya bisa memakai fitur baru yang belum ada di Flutter standar.
 
@@ -87,14 +87,14 @@ Langkah ini bertujuan untuk menambahkan dependensi eksternal (plugin) ke dalam p
 **Jawaban:**
 Maksud dari langkah ini adalah untuk membuat RedTextWidget memiliki parameter input berupa teks yang ingin ditampilkan.
 Dengan adanya parameter text, maka ketika widget ini digunakan di file main.dart, kita bisa memanggilnya seperti:
-RedTextWidget(text: 'You have pushed the button this many times:')
+RedTextWidget(text: 'You have pushed the button this many times:')<br>
 Kesimpulan:
 Langkah ini bertujuan agar widget RedTextWidget dapat menerima data dari luar (parameter text) dan menampilkannya secara dinamis.
 
 
 ### **4. Pada langkah 6 terdapat dua widget yang ditambahkan, jelaskan fungsi dan perbedaannya!**
 **Jawaban:**
-ada langkah 6 terdapat dua widget utama yang ditambahkan di dalam Column, yaitu:
+ada langkah 6 terdapat dua widget utama yang ditambahkan di dalam Column, yaitu:<br>
 a. RedTextWidget
 Container(
   color: Colors.yellowAccent,
@@ -102,11 +102,11 @@ Container(
   child: const RedTextWidget(
     text: 'You have pushed the button this many times:',
   ),
-),
+),<br>
 Fungsi:
 •	Menampilkan teks berwarna merah.
 •	Menggunakan plugin AutoSizeText sehingga ukuran teks otomatis menyesuaikan lebar container.
-•	Dibatasi hanya sampai 2 baris dan jika lebih, akan menampilkan tanda ellipsis (...).
+•	Dibatasi hanya sampai 2 baris dan jika lebih, akan menampilkan tanda ellipsis (...).<br>
 b. Text
 Container(
   color: Colors.greenAccent,
@@ -114,11 +114,11 @@ Container(
   child: const Text(
     'You have pushed the button this many times:',
   ),
-),
+),<br>
 Fungsi:
 •	Menampilkan teks biasa dengan warna default (hitam).
 •	Tidak memiliki fitur otomatis menyesuaikan ukuran teks.
-•	Jika teks terlalu panjang, teks bisa terpotong atau meluap dari batas container.
+•	Jika teks terlalu panjang, teks bisa terpotong atau meluap dari batas container.<br>
 Perbedaan utama:
 Perbandingan RedTextWidget dan Text
 1. Plugin yang digunakan
