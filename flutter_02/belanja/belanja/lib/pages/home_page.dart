@@ -70,7 +70,7 @@ class HomePage extends StatelessWidget {
       backgroundColor: const Color(0xffF4EFFC),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.deepPurple.shade200,
+        backgroundColor: const Color(0xFF8A4FFF),
         title: const Text(
           'SuperMarket',
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
@@ -90,18 +90,18 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.all(12),
             margin: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Colors.deepPurple.shade100,
+              color: const Color(0xFFDCC8FF),
               borderRadius: BorderRadius.circular(12),
             ),
             child: const Row(
               children: [
-                Icon(Icons.local_shipping, color: Colors.deepPurple),
+                Icon(Icons.local_shipping, color: Color(0xFF8A4FFF)),
                 SizedBox(width: 10),
                 Expanded(
                   child: Text(
                     'Gratis ongkir untuk pembelian di atas Rp 50.000!',
                     style: TextStyle(
-                        color: Colors.deepPurple,
+                        color: Color(0xFF8A4FFF),
                         fontWeight: FontWeight.w600),
                   ),
                 ),
@@ -116,7 +116,7 @@ class HomePage extends StatelessWidget {
                   crossAxisCount: 2,
                   mainAxisSpacing: 12,
                   crossAxisSpacing: 12,
-                  childAspectRatio: 0.78,
+                  childAspectRatio: 0.75,
                 ),
                 itemCount: items.length,
                 itemBuilder: (context, index) {
@@ -126,7 +126,9 @@ class HomePage extends StatelessWidget {
             ),
           ),
           const FooterInfo(
-              name: 'Khoir Karol Nurzuraidah', nim: '2341760048'),
+            name: 'Khoir Karol Nurzuraidah',
+            nim: '2341760048',
+          ),
         ],
       ),
     );
