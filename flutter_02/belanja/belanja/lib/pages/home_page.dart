@@ -1,249 +1,133 @@
 import 'package:flutter/material.dart';
-import 'package:belanja/models/item.dart';
+import '../models/item.dart';
+import '../widgets/product_card.dart';
+import '../widgets/footer_info.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({super.key});
-
   final List<Item> items = [
     Item(
-      name: 'Sugar',
-      price: 5000,
-      image: 'images/sugar.jpg',
-      stock: 10,
-      rating: 4.5,
+      name: 'Kecap Manis',
+      price: 18000,
+      image: 'lib/images/kecap.jpg',
+      rating: 4.7,
+      stock: 50,
+      description: 'Kecap manis kental dan lezat, cocok untuk masakan nusantara.',
+      category: 'Bumbu Dapur',
+      weight: '200ml',
+      condition: 'Baru',
     ),
     Item(
-      name: 'Salt',
-      price: 2000,
-      image: 'images/salt.jpg',
-      stock: 15,
-      rating: 4.0,
+      name: 'Tepung Terigu',
+      price: 12000,
+      image: 'lib/images/tepung.jpg',
+      rating: 4.8,
+      stock: 70,
+      description: 'Tepung terigu berkualitas tinggi untuk kue dan gorengan.',
+      category: 'Sembako',
+      weight: '1kg',
+      condition: 'Baru',
+    ),
+    Item(
+      name: 'Garam Dapur',
+      price: 6000,
+      image: 'lib/images/salt.jpg',
+      rating: 4.9,
+      stock: 100,
+      description: 'Garam halus untuk kebutuhan dapur sehari-hari.',
+      category: 'Sembako',
+      weight: '250g',
+      condition: 'Baru',
+    ),
+    Item(
+      name: 'Gula Pasir',
+      price: 15000,
+      image: 'lib/images/sugar.jpg',
+      rating: 4.8,
+      stock: 90,
+      description: 'Gula pasir murni cocok untuk minuman dan masakan.',
+      category: 'Sembako',
+      weight: '1kg',
+      condition: 'Baru',
+    ),
+    Item(
+      name: 'Matcha Powder',
+      price: 85000,
+      image: 'lib/images/macha.jpg',
+      rating: 5.0,
+      stock: 40,
+      description: 'Bubuk matcha asli untuk minuman sehat dan dessert.',
+      category: 'Minuman',
+      weight: '100g',
+      condition: 'Baru',
     ),
   ];
+
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xffF4EFFC),
       appBar: AppBar(
-        title: const Text(
-          'Shopping List',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-        backgroundColor: Colors.blue.shade700,
         elevation: 0,
+        backgroundColor: Colors.deepPurple.shade200,
+        title: const Text(
+          'SuperMarket',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+        ),
         centerTitle: true,
+        actions: const [
+          Icon(Icons.search, color: Colors.white),
+          SizedBox(width: 16),
+          Icon(Icons.shopping_cart_outlined, color: Colors.white),
+          SizedBox(width: 16),
+        ],
       ),
-      backgroundColor: Colors.grey[50],
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: GridView.builder(
-          itemCount: items.length,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 16,
-            mainAxisSpacing: 16,
-            childAspectRatio: 0.72,
+      body: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(12),
+            margin: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: Colors.deepPurple.shade100,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: const Row(
+              children: [
+                Icon(Icons.local_shipping, color: Colors.deepPurple),
+                SizedBox(width: 10),
+                Expanded(
+                  child: Text(
+                    'Gratis ongkir untuk pembelian di atas Rp 50.000!',
+                    style: TextStyle(
+                        color: Colors.deepPurple,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ),
+              ],
+            ),
           ),
-          itemBuilder: (context, index) {
-            final item = items[index];
-            return _buildProductCard(item, context);
-          },
-        ),
-      ),
-    );
-  }
-
-  Widget _buildProductCard(Item item, BuildContext context) {
-    // Buat tag unik untuk Hero
-    final String heroTag = 'hero_${item.name}';
-
-    return Card(
-      elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: InkWell(
-        onTap: () {
-          Navigator.pushNamed(
-            context, 
-            '/item', 
-            arguments: {'item': item, 'heroTag': heroTag}
-          );
-        },
-        borderRadius: BorderRadius.circular(12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Hero Widget untuk gambar
-            Hero(
-              tag: heroTag,
-              child: Container(
-                height: 120,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.vertical(
-                    top: Radius.circular(12),
-                  ),
-                  color: Colors.grey[200],
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 12,
+                  crossAxisSpacing: 12,
+                  childAspectRatio: 0.78,
                 ),
-                child: Stack(
-                  children: [
-                    // Image dengan Hero
-                    ClipRRect(
-                      borderRadius: const BorderRadius.vertical(
-                        top: Radius.circular(12),
-                      ),
-                      child: Image.asset(
-                        item.image,
-                        fit: BoxFit.cover,
-                        width: double.infinity,
-                        height: double.infinity,
-                        errorBuilder: (context, error, stackTrace) {
-                          return Container(
-                            color: Colors.grey[300],
-                            child: const Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(
-                                  Icons.shopping_bag,
-                                  color: Colors.grey,
-                                  size: 32,
-                                ),
-                                SizedBox(height: 4),
-                                Text(
-                                  'No Image',
-                                  style: TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: 10,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                    
-                    // Rating Badge
-                    Positioned(
-                      top: 6,
-                      right: 6,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 6,
-                          vertical: 2,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.black.withOpacity(0.7),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const Icon(
-                              Icons.star,
-                              color: Colors.amber,
-                              size: 12,
-                            ),
-                            const SizedBox(width: 2),
-                            Text(
-                              item.rating.toString(),
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 10,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                itemCount: items.length,
+                itemBuilder: (context, index) {
+                  return ProductCard(item: items[index]);
+                },
               ),
             ),
-            
-            // Info Produk
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Nama Produk dengan Hero untuk text (opsional)
-                  Hero(
-                    tag: 'title_${item.name}',
-                    child: Material(
-                      color: Colors.transparent,
-                      child: Text(
-                        item.name,
-                        style: const TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black87,
-                        ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                  ),
-                  
-                  const SizedBox(height: 4),
-                  
-                  // Harga dengan Hero
-                  Hero(
-                    tag: 'price_${item.name}',
-                    child: Material(
-                      color: Colors.transparent,
-                      child: Text(
-                        'Rp ${item.price}',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue.shade700,
-                        ),
-                      ),
-                    ),
-                  ),
-                  
-                  const SizedBox(height: 6),
-                  
-                  // Stock Info
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 6,
-                      vertical: 3,
-                    ),
-                    decoration: BoxDecoration(
-                      color: item.stock > 5 
-                          ? Colors.green.shade50 
-                          : Colors.orange.shade50,
-                      borderRadius: BorderRadius.circular(6),
-                      border: Border.all(
-                        color: item.stock > 5 
-                            ? Colors.green.shade100 
-                            : Colors.orange.shade100,
-                        width: 1,
-                      ),
-                    ),
-                    child: Text(
-                      'Stok: ${item.stock}',
-                      style: TextStyle(
-                        fontSize: 10,
-                        color: item.stock > 5 
-                            ? Colors.green.shade800 
-                            : Colors.orange.shade800,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
+          ),
+          const FooterInfo(
+              name: 'Khoir Karol Nurzuraidah', nim: '2341760048'),
+        ],
       ),
     );
   }

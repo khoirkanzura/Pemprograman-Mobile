@@ -1,233 +1,109 @@
 import 'package:flutter/material.dart';
-import 'package:belanja/models/item.dart';
+import '../models/item.dart';
 
-class ItemPage extends StatelessWidget {
-  const ItemPage({super.key});
+class ItemDetailPage extends StatelessWidget {
+  final Item item;
+
+  const ItemDetailPage({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
-    final args = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
-    final Item itemArgs = args['item'];
-    final String heroTag = args['heroTag'];
-
     return Scaffold(
+      backgroundColor: const Color(0xffF4EFFC),
       appBar: AppBar(
-        title: Hero(
-          tag: 'title_${itemArgs.name}',
-          child: Material(
-            color: Colors.transparent,
-            child: Text(
-              itemArgs.name,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ),
-        backgroundColor: Colors.blue.shade700,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.pop(context),
-        ),
+        backgroundColor: Colors.deepPurple.shade200,
+        title: Text(item.name, style: const TextStyle(color: Colors.white)),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Hero Widget untuk gambar di detail page
-            Hero(
-              tag: heroTag,
-              child: Container(
-                height: 250,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(itemArgs.image),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-            
-            // Content
+            Image.asset(item.image, width: double.infinity, fit: BoxFit.cover),
             Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Nama dan Rating
+                  Text(item.name,
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 8),
+                  Text('Rp ${item.price}',
+                      style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.deepPurple)),
+                  const SizedBox(height: 8),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Expanded(
-                        child: Hero(
-                          tag: 'title_${itemArgs.name}',
-                          child: Material(
-                            color: Colors.transparent,
-                            child: Text(
-                              itemArgs.name,
-                              style: const TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black87,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 10),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 10,
-                          vertical: 5,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.amber.shade50,
-                          borderRadius: BorderRadius.circular(15),
-                          border: Border.all(color: Colors.amber.shade200),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const Icon(
-                              Icons.star_rounded,
-                              color: Colors.amber,
-                              size: 18,
-                            ),
-                            const SizedBox(width: 4),
-                            Text(
-                              itemArgs.rating.toString(),
-                              style: const TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      const Icon(Icons.star, color: Colors.orange, size: 18),
+                      Text('${item.rating} / 5'),
+                      const SizedBox(width: 16),
+                      Text('Stok: ${item.stock}'),
                     ],
                   ),
-                  
-                  const SizedBox(height: 12),
-                  
-                  // Harga dengan Hero
-                  Hero(
-                    tag: 'price_${itemArgs.name}',
-                    child: Material(
-                      color: Colors.transparent,
-                      child: Text(
-                        'Rp ${itemArgs.price}',
-                        style: TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue.shade700,
-                        ),
-                      ),
-                    ),
-                  ),
-                  
                   const SizedBox(height: 16),
-                  
-                  // Stock Information
-                  Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade50,
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: Colors.grey.shade200),
-                    ),
-                    child: Row(
-                      children: [
-                        Icon(
-                          itemArgs.stock > 5 
-                              ? Icons.check_circle 
-                              : Icons.warning,
-                          color: itemArgs.stock > 5 
-                              ? Colors.green 
-                              : Colors.orange,
-                          size: 20,
-                        ),
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: Text(
-                            itemArgs.stock > 5 
-                                ? 'Tersedia (${itemArgs.stock} item)' 
-                                : 'Stok Terbatas (${itemArgs.stock} item)',
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: itemArgs.stock > 5 
-                                  ? Colors.green.shade800 
-                                  : Colors.orange.shade800,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  
-                  const SizedBox(height: 20),
-                  
-                  // Product Details
-                  const Text(
-                    'Detail Produk',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87,
-                    ),
-                  ),
-                  const SizedBox(height: 6),
                   Text(
-                    '${itemArgs.name} berkualitas tinggi dengan rating pelanggan yang excellent. Cocok untuk kebutuhan memasak sehari-hari.',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.grey.shade700,
-                      height: 1.4,
-                    ),
+                    item.description,
+                    style: const TextStyle(fontSize: 14),
                   ),
-                  
-                  const SizedBox(height: 24),
-                  
-                  // Add to Cart Button
-                  SizedBox(
-                    width: double.infinity,
-                    height: 50,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text('${itemArgs.name} ditambahkan ke keranjang'),
-                            backgroundColor: Colors.green,
-                            behavior: SnackBarBehavior.floating,
-                          ),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue.shade700,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        elevation: 2,
-                      ),
-                      child: const Text(
-                        'Tambah ke Keranjang',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
+                  const SizedBox(height: 16),
+                  Row(
+                    children: [
+                      Chip(
+                          label: Text(item.category),
+                          backgroundColor: Colors.deepPurple.shade50),
+                      const SizedBox(width: 8),
+                      Chip(
+                          label: Text(item.condition),
+                          backgroundColor: Colors.deepPurple.shade50),
+                      const SizedBox(width: 8),
+                      Chip(
+                          label: Text(item.weight),
+                          backgroundColor: Colors.deepPurple.shade50),
+                    ],
                   ),
                 ],
               ),
             ),
           ],
+        ),
+      ),
+      bottomNavigationBar: SafeArea(
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 6)
+            ],
+          ),
+          child: Row(
+            children: [
+              Expanded(
+                child: ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orangeAccent,
+                    minimumSize: const Size(0, 45),
+                  ),
+                  onPressed: () {},
+                  icon: const Icon(Icons.shopping_cart),
+                  label: const Text('Tambah Keranjang'),
+                ),
+              ),
+              const SizedBox(width: 8),
+              Expanded(
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 224, 208, 250),
+                    minimumSize: const Size(0, 45),
+                  ),
+                  onPressed: () {},
+                  child: const Text('Beli Sekarang'),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

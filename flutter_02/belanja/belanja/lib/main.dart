@@ -1,6 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:belanja/pages/home_page.dart';
 import 'package:belanja/pages/item_page.dart';
+import 'package:flutter/material.dart';
+import 'pages/home_page.dart';
+import 'pages/item_detail_page.dart';
+import 'models/item.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,24 +14,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Belanja App',
+      title: 'SuperMarket',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: 'Inter',
-        useMaterial3: true,
-        // Optional: Customize page transitions
-        pageTransitionsTheme: const PageTransitionsTheme(
-          builders: {
-            TargetPlatform.android: ZoomPageTransitionsBuilder(),
-            TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-          },
-        ),
+        primarySwatch: Colors.deepPurple,
+        fontFamily: 'Poppins',
       ),
-      home: HomePage(),
-      routes: {
-        '/item': (context) => const ItemPage(),
-      },
       debugShowCheckedModeBanner: false,
+      home: HomePage(),
+      onGenerateRoute: (settings) {
+        if (settings.name == '/item') {
+          final item = settings.arguments as Item;
+          return MaterialPageRoute(
+            builder: (context) => ItemDetailPage(item: item),
+          );
+        }
+        return null;
+      },
     );
   }
 }
