@@ -6,15 +6,23 @@ class ItemPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final itemArgs = ModalRoute.of(context)!.settings.arguments as Item;
+    final args = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+    final Item itemArgs = args['item'];
+    final String heroTag = args['heroTag'];
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          itemArgs.name,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
+        title: Hero(
+          tag: 'title_${itemArgs.name}',
+          child: Material(
+            color: Colors.transparent,
+            child: Text(
+              itemArgs.name,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
           ),
         ),
         backgroundColor: Colors.blue.shade700,
@@ -28,19 +36,22 @@ class ItemPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Gambar Produk - FIXED HEIGHT
-            Container(
-              height: 250, // Diatur fixed height
-              width: double.infinity,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(itemArgs.image),
-                  fit: BoxFit.cover,
+            // Hero Widget untuk gambar di detail page
+            Hero(
+              tag: heroTag,
+              child: Container(
+                height: 250,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(itemArgs.image),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
             
-            // Content - PROPER PADDING
+            // Content
             Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
@@ -52,12 +63,18 @@ class ItemPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
-                        child: Text(
-                          itemArgs.name,
-                          style: const TextStyle(
-                            fontSize: 24, // Diperkecil dari 28
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black87,
+                        child: Hero(
+                          tag: 'title_${itemArgs.name}',
+                          child: Material(
+                            color: Colors.transparent,
+                            child: Text(
+                              itemArgs.name,
+                              style: const TextStyle(
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black87,
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -95,13 +112,20 @@ class ItemPage extends StatelessWidget {
                   ),
                   
                   const SizedBox(height: 12),
-                
-                  Text(
-                    'Rp ${itemArgs.price}',
-                    style: TextStyle(
-                      fontSize: 28, 
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blue.shade700,
+                  
+                  // Harga dengan Hero
+                  Hero(
+                    tag: 'price_${itemArgs.name}',
+                    child: Material(
+                      color: Colors.transparent,
+                      child: Text(
+                        'Rp ${itemArgs.price}',
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue.shade700,
+                        ),
+                      ),
                     ),
                   ),
                   
