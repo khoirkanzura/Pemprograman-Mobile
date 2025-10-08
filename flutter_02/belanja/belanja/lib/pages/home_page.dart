@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:belanja/models/item.dart';
+import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -14,29 +14,36 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Shopping List'),
+        backgroundColor: Colors.blue,
       ),
       body: Container(
-        margin: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(16),
         child: ListView.builder(
-          padding: const EdgeInsets.all(8),
           itemCount: items.length,
           itemBuilder: (context, index) {
             final item = items[index];
-
             return InkWell(
               onTap: () {
-                Navigator.pushNamed(context, '/item', arguments: item);
+                // Navigasi ke halaman detail dengan membawa data item
+                Navigator.pushNamed(
+                  context,
+                  '/item',
+                  arguments: item,
+                );
               },
               child: Card(
-                child: Container(
-                  margin: const EdgeInsets.all(8),
+                margin: const EdgeInsets.symmetric(vertical: 8),
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Expanded(child: Text(item.name)),
-                      Expanded(
-                        child: Text(
-                          item.price.toString(),
-                          textAlign: TextAlign.end,
+                      Text(item.name, style: const TextStyle(fontSize: 18)),
+                      Text(
+                        item.price.toString(),
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ],
