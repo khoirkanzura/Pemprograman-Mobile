@@ -120,8 +120,8 @@ Gunakan BoxFit.cover agar gambar menutupi seluruh area render dengan proporsi ya
 #### **Langkah 3: Mengubah Menjadi ListView**
 Ubah susunan elemen dari Column menjadi ListView.
 ListView mendukung fitur scrolling otomatis, sehingga tampilan tetap rapi dan responsif di layar kecil.
-<p align="center"><img src="./images/layout_11.png" alt="Screenshot ListView" width="500"/></p>
-<p align="center"><img src="./images/00.mp4" alt="Screenshot ListView" width="500"/></p>
+<p align="center"><img src="./images/11.png" alt="Screenshot ListView" width="500"/></p>
+<p align="center"><img src="./images/00.mp4" alt="Screenshot ListView" width="400"/></p>
 
 ✨ Selesai.
 Laporan Praktikum Flutter (Layout) — Khoir Karol Nurzuraidah (SIB 3C / Absen 20)
