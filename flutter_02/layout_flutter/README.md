@@ -100,7 +100,7 @@ Tambahkan widget variabel textSection ke dalam body.
 
 ---
 
-### **Praktikum 4: Implementasi Image Section
+### **Praktikum 4: Implementasi Image Section**
 #### **Langkah 1: Menyiapkan Aset Gambar**
 Cari gambar dari internet yang ingin ditampilkan.
 Selanjutnya, buat folder images di direktori utama project layout_flutter.
