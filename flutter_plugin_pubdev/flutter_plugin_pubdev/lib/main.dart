@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'red_text_widget.dart'; 
+import 'red_text_widget.dart'; // import widget custom kita
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Plugin PubDev',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.purple,
+          foregroundColor: Colors.white,
+        ),
       ),
       home: const MyHomePage(title: 'Flutter Plugin PubDev'),
     );
@@ -48,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            // 🔹 Container pertama menggunakan widget RedTextWidget
             Container(
               color: Colors.yellowAccent,
               width: 50,
@@ -55,6 +60,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 text: 'You have pushed the button this many times:',
               ),
             ),
+            const SizedBox(height: 16), 
+            
+            // 🔹 Container kedua menggunakan Text biasa
             Container(
               color: Colors.greenAccent,
               width: 100,
@@ -62,6 +70,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 'You have pushed the button this many times:',
               ),
             ),
+            const SizedBox(height: 16),
+
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
@@ -72,6 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
+        backgroundColor: const Color.fromARGB(255, 188, 121, 200), 
         child: const Icon(Icons.add),
       ),
     );
