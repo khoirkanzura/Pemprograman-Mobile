@@ -1,11 +1,16 @@
-<p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/id/4/4b/Politeknik_Negeri_Malang.png" alt="Logo Polinema" width="150"/>
-</p>
-
-<h2 align="center">Jurusan Teknologi Informasi Politeknik Negeri Malang</h2>
-<h3 align="center">Jobsheet 7: Manajemen Plugin</h3>
-<h3 align="center">Mata Kuliah Pemrograman Mobile</h3>
-<p align="center"><em>September 2025</em></p>
+<table>
+  <tr>
+    <td width="180" align="center">
+      <img src="images/logo.png" alt="Logo Polinema" width="150">
+    </td>
+    <td>
+      <h2>Jurusan Teknologi Informasi Politeknik Negeri Malang</h2>
+      <h3>Jobsheet 7: Manajemen Plugin</h3>
+      <h3>Mata Kuliah Pemrograman Mobile</h3>
+      <em>September 2025</em>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -27,26 +32,26 @@ Tujuan dari praktikum ini adalah memahami cara menambahkan plugin eksternal dari
 
 ### **Langkah 1: Membuat Project Baru**
 Buatlah sebuah project flutter baru dengan nama flutter_plugin_pubdev. Lalu jadikan repository di GitHub Anda dengan nama flutter_plugin_pubdev.
-<p align="center"><img src="./images/01.png" alt="Screenshot 1" width="400"/></p>  
+<p align="center"><img src="./images/01.png" alt="Screenshot 1" width="600"/></p>  
 
 ---
 
 ### **Langkah 2: Menambahkan Plugin**
 Tambahkan plugin auto_size_text menggunakan perintah berikut di terminal. Jika berhasil, maka akan tampil nama plugin beserta versinya di file pubspec.yaml pada bagian dependencies
-<p align="center"><img src="./images/02.png" alt="Screenshot 1" width="400"/></p>
-<p align="center"><img src="./images/02.1.png" alt="Screenshot 1" width="400"/></p>    
+<p align="center"><img src="./images/02.png" alt="Screenshot 1" width="600"/></p>
+<p align="center"><img src="./images/02.1.png" alt="Screenshot 1" width="600"/></p>    
 
 ---
 
 ### **Langkah 3: Buat file red_text_widget.dart**
 Buat file baru bernama red_text_widget.dart di dalam folder lib lalu isi kode seperti berikut.
-<p align="center"><img src="./images/03.png" alt="Screenshot 1" width="400"/></p>   
+<p align="center"><img src="./images/03.png" alt="Screenshot 1" width="600"/></p>   
 
 ---
 
 ### **Langkah 4: Tambah Widget AutoSizeText**
 Masih di file red_text_widget.dart, untuk menggunakan plugin auto_size_text, ubahlah kode return Container() menjadi seperti berikut. Setelah Anda menambahkan kode di atas, Anda akan mendapatkan info error. Mengapa demikian? Jelaskan dalam laporan praktikum Anda!
-<p align="center"><img src="./images/04.png" alt="Screenshot 1" width="400"/></p> 
+<p align="center"><img src="./images/04.png" alt="Screenshot 1" width="600"/></p> 
 **Jawaban:**
 Penjelasan kenapa muncul error:
 Error muncul karena variabel text belum didefinisikan.
@@ -56,13 +61,13 @@ Widget AutoSizeText membutuhkan argumen text (tipe String) untuk ditampilkan, te
 
 ### **Langkah 5: Buat Variabel text dan parameter di constructor**
 Tambahkan variabel text dan parameter di constructor seperti berikut.
-<p align="center"><img src="./images/05.png" alt="Screenshot 1" width="400"/></p> 
+<p align="center"><img src="./images/05.png" alt="Screenshot 1" width="600"/></p> 
 
 ---
 
 ### **Langkah 6: Tambahkan widget di main.dart**
 Buka file main.dart lalu tambahkan di dalam children: pada class _MyHomePageState
-<p align="center"><img src="./images/06.png" alt="Screenshot 1" width="400"/></p> 
+<p align="center"><img src="./images/06.png" alt="Screenshot 1" width="600"/></p> 
 Run aplikasi tersebut dengan tekan F5, maka hasilnya akan seperti berikut
 
 ---
