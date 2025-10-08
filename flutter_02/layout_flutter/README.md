@@ -14,14 +14,10 @@
 Buat sebuah project Flutter baru dengan nama **`layout_flutter`**, atau sesuaikan dengan gaya penulisan laporan praktikum yang Anda gunakan.  
 <p align="center"><img src="./images/01.png" alt="Screenshot Praktikum 1" width="500"/></p>
 
----
-
 #### **Langkah 2: Membuka file `lib/main.dart`**
 Buka file `main.dart`, kemudian ganti isinya dengan kode berikut.  
 Jangan lupa menuliskan **Nama dan NIM Anda** pada bagian text title.  
 <p align="center"><img src="./images/02.png" alt="Screenshot Praktikum 1.2" width="500"/></p>
-
----
 
 #### **Langkah 3: Identifikasi Layout Diagram**
 Tahap ini dilakukan dengan memecah tata letak menjadi elemen-elemen dasarnya:
@@ -43,8 +39,6 @@ Setelah itu, buat diagram untuk setiap baris:
 
 Setelah tata letak berhasil digambarkan dalam bentuk diagram, cara paling efektif untuk implementasi adalah menggunakan pendekatan **bottom-up**.  
 Untuk mengurangi kompleksitas visual pada kode layout yang saling bertumpuk, beberapa bagian implementasi sebaiknya ditempatkan dalam variabel atau fungsi terpisah.
-
----
 
 #### **Langkah 4: Implementasi Title Row**
 ##### **Soal 1**
@@ -81,8 +75,6 @@ Method ini menerima parameter berupa **warna**, **ikon**, dan **teks**, lalu men
 
 <p align="center"><img src="./images/04.png" alt="Screenshot Button Section" width="500"/></p>
 
----
-
 #### **Langkah 2: Membuat Widget `buttonSection`**
 Pada tahap ini, kita akan membuat sebuah widget baris yang berisi tiga kolom tombol (ikon + teks).  
 Setiap kolom dibentuk dengan memanggil fungsi `_buildButtonColumn()` yang sudah dibuat sebelumnya, lalu diberi warna, ikon, dan label sesuai kebutuhan.Teks pada setiap kolom berada di dalam `Container` dengan margin bagian atas, supaya ada jarak antara ikon dan teks. Untuk meratakan posisi kolom, gunakan gunakan Row dengan properti mainAxisAlignment: MainAxisAlignment.spaceEvenly. Dengan begitu, setiap kolom akan mendapat jarak yang sama baik sebelum, di antara, maupun sesudahnya.
@@ -91,6 +83,8 @@ Setiap kolom dibentuk dengan memanggil fungsi `_buildButtonColumn()` yang sudah 
 #### **Langkah 3: Tambah buttonSection ke Body**
 Tambahkan variabel buttonSection ke dalam body seperti berikut.
 <p align="center"><img src="./images/06.png" alt="Screenshot Button Body" width="500"/></p>
+
+---
 
 ### **Praktikum 3: Implementasi Text Section**
 #### **Langkah 1: Buat Widget textSection**
@@ -103,6 +97,8 @@ Dengan memberi nilai softWrap = true, baris teks akan memenuhi lebar kolom sebel
 #### **Langkah 2: Tambahkan Variabel textSection ke Body**
 Tambahkan widget variabel textSection ke dalam body.
 <p align="center"><img src="./images/08.png" alt="Screenshot Text Section" width="500"/></p>
+
+---
 
 ### **Praktikum 4: Implementasi Image Section
 #### **Langkah 1: Menyiapkan Aset Gambar**
