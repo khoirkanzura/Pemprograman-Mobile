@@ -11,7 +11,7 @@
 ### **Langkah 1: Menyiapkan Project Baru**
 Buat project Flutter baru dengan nama **belanja**.  
 Susun folder project sesuai struktur yang ditentukan agar kode lebih terorganisasi.  
-<p align="center"><img src="./images/belanja_01.png" alt="Screenshot 1" width="400"/></p>
+<p align="center"><img src="./images/00.mp4" alt="Screenshot 1" width="400"/></p>
 
 ---
 
