@@ -7,7 +7,7 @@
       <h2>Jurusan Teknologi Informasi Politeknik Negeri Malang</h2>
       <h3>Jobsheet 7: Manajemen Plugin</h3>
       <h3>Mata Kuliah Pemrograman Mobile</h3>
-      <em>September 2025</em>
+      <em>Oktober 2025</em>
     </td>
   </tr>
 </table>
