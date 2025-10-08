@@ -95,32 +95,32 @@ Langkah ini bertujuan agar widget RedTextWidget dapat menerima data dari luar (p
 ### **4. Pada langkah 6 terdapat dua widget yang ditambahkan, jelaskan fungsi dan perbedaannya!**
 **Jawaban:**
 ada langkah 6 terdapat dua widget utama yang ditambahkan di dalam Column, yaitu:<br>
-a. RedTextWidget
-Container(
-  color: Colors.yellowAccent,
-  width: 50,
-  child: const RedTextWidget(
-    text: 'You have pushed the button this many times:',
-  ),
+**a. RedTextWidget**<br>
+Container(<br>
+  color: Colors.yellowAccent,<br>
+  width: 50,<br>
+  child: const RedTextWidget(<br>
+    text: 'You have pushed the button this many times:',<br>
+  ),<br>
 ),<br>
-Fungsi:
+**Fungsi:**<br>
 •	Menampilkan teks berwarna merah.<br>
 •	Menggunakan plugin AutoSizeText sehingga ukuran teks otomatis menyesuaikan lebar container.<br>
 •	Dibatasi hanya sampai 2 baris dan jika lebih, akan menampilkan tanda ellipsis (...).<br>
-b. Text
-Container(
-  color: Colors.greenAccent,
-  width: 100,
-  child: const Text(
-    'You have pushed the button this many times:',
-  ),
+**b. Text**<br>
+Container(<br>
+  color: Colors.greenAccent,<br>
+  width: 100,<br>
+  child: const Text(<br>
+    'You have pushed the button this many times:',<br>
+  ),<br>
 ),<br>
-Fungsi:
+**Fungsi:**<br>
 •	Menampilkan teks biasa dengan warna default (hitam).<br>
 •	Tidak memiliki fitur otomatis menyesuaikan ukuran teks.<br>
 •	Jika teks terlalu panjang, teks bisa terpotong atau meluap dari batas container.<br>
-Perbedaan utama:
-Perbandingan RedTextWidget dan Text
+**Perbedaan utama:**<br>
+**Perbandingan RedTextWidget dan Text**<br>
 1. Plugin yang digunakan
 Pada widget RedTextWidget, digunakan plugin AutoSizeText yang diimpor dari Pub.dev untuk menampilkan teks secara dinamis dan responsif.
 Sementara pada widget Text, tidak menggunakan plugin tambahan karena merupakan widget bawaan dari Flutter.
@@ -143,13 +143,13 @@ Sementara itu, widget Text tidak sepenuhnya responsif — ukuran teks tidak beru
 
 ### **5. Jelaskan maksud dari tiap parameter yang ada di dalam plugin auto_size_text berdasarkan tautan pada dokumentasi ini ! https://pub.dev/documentation/auto_size_text/latest/**
 **Jawaban:**
-Berdasarkan dokumentasi AutoSizeText di pub.dev, berikut penjelasan parameter penting yang digunakan dalam praktikum:
-AutoSizeText(
-  text,
-  style: const TextStyle(color: Colors.red, fontSize: 14),
-  maxLines: 2,
-  overflow: TextOverflow.ellipsis,
-);
+Berdasarkan dokumentasi AutoSizeText di pub.dev, berikut penjelasan parameter penting yang digunakan dalam praktikum:<br>
+AutoSizeText(<br>
+  text,<br>
+  style: const TextStyle(color: Colors.red, fontSize: 14),<br>
+  maxLines: 2,<br>
+  overflow: TextOverflow.ellipsis,<br>
+);<br>
 
 Penjelasan Parameter pada Plugin AutoSizeText:
 1. text (String)
