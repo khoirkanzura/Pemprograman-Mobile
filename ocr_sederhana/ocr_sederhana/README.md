@@ -101,14 +101,17 @@ Di dalam folder lib/, buat struktur berikut:
 ---
 
 ### **OUTPUT**
-<p align="center"><img src="./images/10.1.png" alt="Screenshot 1" width="650"/></p> 
 ‘klik mulai scan teks’
+<p align="center"><img src="./images/10.1.png" alt="Screenshot 1" width="650"/></p> 
 
-<p align="center"><img src="./images/10.2.png" alt="Screenshot 1" width="650"/></p> 
+
 ‘klik ambil foto dan scan’
+<p align="center"><img src="./images/10.2.png" alt="Screenshot 1" width="650"/></p> 
 
-<p align="center"><img src="./images/10.3.png" alt="Screenshot 1" width="650"/></p> 
+
 ‘hasil dari scan foto di atas adalah KA 3-5’
+<p align="center"><img src="./images/10.3.png" alt="Screenshot 1" width="650"/></p> 
+
 
 ---
 
@@ -117,18 +120,18 @@ Di dalam folder lib/, buat struktur berikut:
 
 ### **2. Lakukan scan terhadap teks cetak (misal: buku, koran, atau layar HP).**
 
-### **2. Amati hasil OCR yang muncul.**
+### **3. Amati hasil OCR yang muncul.**
 
 ### **4. Jawab pertanyaan berikut:**
-**a. Apakah semua teks terbaca dengan akurat? Mengapa?**
+**a. Apakah semua teks terbaca dengan akurat? Mengapa?** <br>
 **Jawaban:**
 Tidak semua teks dapat terbaca dengan akurat. Akurasi hasil OCR bergantung pada kualitas gambar yang diambil, pencahayaan saat pemotretan, jenis dan ukuran font, serta kejernihan teks. Jika teks buram, miring, atau memiliki latar belakang yang gelap, sistem OCR sulit mengenali huruf dengan benar. Namun, jika teks jelas, kontras tinggi, dan pencahayaan baik, hasilnya bisa sangat akurat.
 
-**b. Apa kegunaan fitur OCR dalam kehidupan sehari-hari?**
+**b. Apa kegunaan fitur OCR dalam kehidupan sehari-hari?** <br>
 **Jawaban:**
 Fitur OCR berguna untuk mengubah teks dari gambar menjadi teks digital yang bisa disalin, disimpan, atau diedit. Dalam kehidupan sehari-hari, OCR membantu mempercepat proses penyalinan dokumen cetak, membaca teks dari papan informasi, nota, atau kartu identitas, serta memudahkan digitalisasi dokumen agar bisa dicari dan diarsipkan secara efisien.
 
-**c. Sebutkan 2 contoh aplikasi nyata yang menggunakan OCR!**
+**c. Sebutkan 2 contoh aplikasi nyata yang menggunakan OCR!** <br>
 **Jawaban:**
 1. Google Lens – untuk membaca dan menyalin teks dari gambar atau foto langsung melalui kamera.<br>
 2. Microsoft Office Lens / Adobe Scan – untuk memindai dokumen atau kwitansi dan mengubahnya menjadi file teks atau PDF yang dapat diedit.
