@@ -101,17 +101,21 @@ Di dalam folder lib/, buat struktur berikut:
 ---
 
 ### **OUTPUT**
-‘klik mulai scan teks’
-<p align="center"><img src="./images/10.1.png" alt="Screenshot 1" width="700"/></p> 
+<p align="center">
+  <img src="./images/10.1.png" alt="Screenshot 1" width="700"/><br>
+  <b>'klik mulai scan teks'</b>
 
 
-‘klik ambil foto dan scan’
-<p align="center"><img src="./images/10.2.png" alt="Screenshot 1" width="700"/></p> 
+<p align="center">
+  <img src="./images/10.2.png" alt="Screenshot 1" width="700"/><br>
+  <b>'klik ambil foto dan scan'</b>
+</p>
 
 
-‘hasil dari scan foto di atas adalah KA 3-5’
-<p align="center"><img src="./images/10.3.png" alt="Screenshot 1" width="700"/></p> 
-
+<p align="center">
+  <img src="./images/10.3.png" alt="Screenshot 1" width="700"/><br>
+  <b>'hasil dari scan foto di atas adalah KA 3-5'</b>
+</p>
 
 ---
 
