@@ -15,10 +15,10 @@
 ---
 
 **Nama:** Khoir Karol Nurzuraidah  
-**Kelas / NIM:** SIB 3C / 2341760048 
-**No. Absen:** 20  
-**Tanggal:** 16 OKtober 2025
-**Guru / Dosen:** Ade Ismail, S.Kom., M.TI. 
+**Kelas / NIM:** SIB 3C / 2341760048 <br>
+**No. Absen:** 20  <br>
+**Tanggal:** 16 OKtober 2025 <br>
+**Guru / Dosen:** Ade Ismail, S.Kom., M.TI. <br>
 
 # 🚀 Praktikum Aplikasi OCR Sederhana Dengan Flutter
 
@@ -47,16 +47,17 @@ google mlkit text recognition.
 Buka terminal, lalu jalankan:
 <p align="center"><img src="./images/01.png" alt="Screenshot 1" width="600"/></p>  
 <p align="center"><img src="./images/01.1.png" alt="Screenshot 1" width="600"/></p> 
-<p align="center"><img src="./images/01.2.png.png" alt="Screenshot 1" width="600"/></p>  
+<p align="center"><img src="./images/01.2.png" alt="Screenshot 1" width="600"/></p>  
 
 ---
 
 ### **4.2. Langkah 2: Tambahkan Plugin**
 Buka file pubspec.yaml, lalu tambahkan dependensi berikut di bawah bagian dependencies:
 <p align="center"><img src="./images/02.png" alt="Screenshot 1" width="600"/></p>
---
+
+
 Simpan file, lalu jalankan:
-<p align="center"><img src="./images/02.1.png" alt="Screenshot 1" width="600"/></p>  
+<p align="center"><img src="./images/02.2.png" alt="Screenshot 1" width="600"/></p>  
 
 ---
 
@@ -100,9 +101,14 @@ Di dalam folder lib/, buat struktur berikut:
 ---
 
 ### **OUTPUT**
-<p align="center"><img src="./images/10.1.png" alt="Screenshot 1" width="600"/>‘klik mulai scan teks’</p> 
-<p align="center"><img src="./images/10.2.png" alt="Screenshot 1" width="600"/>‘klik ambil foto dan scan’</p> 
-<p align="center"><img src="./images/10.3.png" alt="Screenshot 1" width="600"/>‘hasil dari scan foto di atas adalah KA 3-5’</p> 
+<p align="center"><img src="./images/10.1.png" alt="Screenshot 1" width="650"/></p> 
+‘klik mulai scan teks’
+
+<p align="center"><img src="./images/10.2.png" alt="Screenshot 1" width="650"/></p> 
+‘klik ambil foto dan scan’
+
+<p align="center"><img src="./images/10.3.png" alt="Screenshot 1" width="650"/></p> 
+‘hasil dari scan foto di atas adalah KA 3-5’
 
 ---
 
@@ -118,13 +124,9 @@ Di dalam folder lib/, buat struktur berikut:
 **Jawaban:**
 Tidak semua teks dapat terbaca dengan akurat. Akurasi hasil OCR bergantung pada kualitas gambar yang diambil, pencahayaan saat pemotretan, jenis dan ukuran font, serta kejernihan teks. Jika teks buram, miring, atau memiliki latar belakang yang gelap, sistem OCR sulit mengenali huruf dengan benar. Namun, jika teks jelas, kontras tinggi, dan pencahayaan baik, hasilnya bisa sangat akurat.
 
---
-
 **b. Apa kegunaan fitur OCR dalam kehidupan sehari-hari?**
 **Jawaban:**
 Fitur OCR berguna untuk mengubah teks dari gambar menjadi teks digital yang bisa disalin, disimpan, atau diedit. Dalam kehidupan sehari-hari, OCR membantu mempercepat proses penyalinan dokumen cetak, membaca teks dari papan informasi, nota, atau kartu identitas, serta memudahkan digitalisasi dokumen agar bisa dicari dan diarsipkan secara efisien.
-
---
 
 **c. Sebutkan 2 contoh aplikasi nyata yang menggunakan OCR!**
 **Jawaban:**
