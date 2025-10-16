@@ -34,9 +34,9 @@ google mlkit text recognition.
 ---
 
 ## 3. ALAT DAN BAHAN
-• Laptop/komputer dengan Flutter SDK terinstal
-• VS Code atau Android Studio
-• Emulator Android atau perangkat Android fisik
+• Laptop/komputer dengan Flutter SDK terinstal <br>
+• VS Code atau Android Studio <br>
+• Emulator Android atau perangkat Android fisik <br>
 • Koneksi internet (untuk instalasi dependensi)
 
 ---
@@ -47,7 +47,7 @@ google mlkit text recognition.
 Buka terminal, lalu jalankan:
 <p align="center"><img src="./images/01.png" alt="Screenshot 1" width="600"/></p>  
 <p align="center"><img src="./images/01.1.png" alt="Screenshot 1" width="600"/></p> 
-<p align="center"><img src="./images/01.2.png" alt="Screenshot 1" width="600"/></p>  
+<p align="center"><img src="./images/01.2.png" alt="Screenshot 1" width="500"/></p>  
 
 ---
 
@@ -102,15 +102,15 @@ Di dalam folder lib/, buat struktur berikut:
 
 ### **OUTPUT**
 ‘klik mulai scan teks’
-<p align="center"><img src="./images/10.1.png" alt="Screenshot 1" width="650"/></p> 
+<p align="center"><img src="./images/10.1.png" alt="Screenshot 1" width="700"/></p> 
 
 
 ‘klik ambil foto dan scan’
-<p align="center"><img src="./images/10.2.png" alt="Screenshot 1" width="650"/></p> 
+<p align="center"><img src="./images/10.2.png" alt="Screenshot 1" width="700"/></p> 
 
 
 ‘hasil dari scan foto di atas adalah KA 3-5’
-<p align="center"><img src="./images/10.3.png" alt="Screenshot 1" width="650"/></p> 
+<p align="center"><img src="./images/10.3.png" alt="Screenshot 1" width="700"/></p> 
 
 
 ---
