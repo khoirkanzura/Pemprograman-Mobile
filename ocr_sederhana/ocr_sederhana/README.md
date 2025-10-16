@@ -15,8 +15,10 @@
 ---
 
 **Nama:** Khoir Karol Nurzuraidah  
-**Kelas:** SIB 3C  
+**Kelas / NIM:** SIB 3C / 2341760048 
 **No. Absen:** 20  
+**Tanggal:** 16 OKtober 2025
+**Guru / Dosen:** Ade Ismail, S.Kom., M.TI. 
 
 # 🚀 Praktikum Aplikasi OCR Sederhana Dengan Flutter
 
