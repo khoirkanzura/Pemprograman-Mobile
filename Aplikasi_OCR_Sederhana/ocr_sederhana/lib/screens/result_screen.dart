@@ -1,89 +1,71 @@
-// lib/screens/result_screen.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'home_screen.dart';
 
 class ResultScreen extends StatefulWidget {
-  final String? ocrText;
-  final String? imagePath;
+  final String ocrText;
 
-  const ResultScreen({Key? key, this.ocrText, this.imagePath}) : super(key: key);
+  const ResultScreen({super.key, required this.ocrText});
 
   @override
   _ResultScreenState createState() => _ResultScreenState();
 }
 
 class _ResultScreenState extends State<ResultScreen> {
-  late FlutterTts _flutterTts;
+  final FlutterTts flutterTts = FlutterTts();
 
   @override
   void initState() {
     super.initState();
-    _flutterTts = FlutterTts();
-    _setupTts();
-  }
-
-  Future<void> _setupTts() async {
-    // set bahasa Indonesia
-    try {
-      await _flutterTts.setLanguage("id-ID");
-    } catch (e) {
-    }
+    flutterTts.setLanguage("id-ID"); // Bahasa Indonesia
   }
 
   @override
   void dispose() {
-    _flutterTts.stop();
+    flutterTts.stop(); // Hentikan suara saat halaman ditutup
     super.dispose();
-  }
-
-  Future<void> _speak() async {
-    final text = widget.ocrText ?? '';
-    if (text.trim().isEmpty) return;
-    await _flutterTts.speak(text);
-  }
-
-  void _goHomeAndClearStack() {
-    Navigator.pushAndRemoveUntil(
-      context,
-      MaterialPageRoute(builder: (context) => const HomeScreen()),
-      (Route<dynamic> route) => false,
-    );
   }
 
   @override
   Widget build(BuildContext context) {
-    final displayText = widget.ocrText ?? '';
-
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Hasil Pindai'),
-      ),
+      appBar: AppBar(title: const Text('Hasil OCR')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
-          child: Text(
-            displayText, 
-            style: const TextStyle(fontSize: 16),
+          child: SelectableText(
+            widget.ocrText.isEmpty
+                ? 'Tidak ada teks ditemukan.'
+                : widget.ocrText, // tampilkan teks utuh
+            style: const TextStyle(fontSize: 18),
           ),
         ),
       ),
-      // gunakan dua FAB dengan Column
+
+      // Dua FloatingActionButton: Home & Volume
       floatingActionButton: Column(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
+          // Tombol untuk membacakan teks
           FloatingActionButton(
-            heroTag: 'home_fab',
-            onPressed: _goHomeAndClearStack,
-            tooltip: 'Kembali ke Home',
-            child: const Icon(Icons.home),
-          ),
-          const SizedBox(height: 12),
-          FloatingActionButton(
-            heroTag: 'tts_fab',
-            onPressed: _speak,
-            tooltip: 'Bacakan Teks',
+            heroTag: 'ttsButton',
+            onPressed: () async {
+              await flutterTts.speak(widget.ocrText);
+            },
             child: const Icon(Icons.volume_up),
+          ),
+          const SizedBox(height: 10),
+          // Tombol untuk kembali ke Home
+          FloatingActionButton(
+            heroTag: 'homeButton',
+            onPressed: () {
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => const HomeScreen()),
+                (route) => false,
+              );
+            },
+            child: const Icon(Icons.home),
           ),
         ],
       ),
