@@ -38,7 +38,10 @@ commit dan push akan mengurangi poin penilaian
   • git add . <br>
   • git commit -m "UTS: Basis awal proyek OCR Sederhana" <br>
   • git push origin main 
-<p align="center"><img src="./images/01.1.png" alt="Screenshot 1" width="600"/></p> 
+  <p align="center"><img src="./images/01.2.png" alt="Screenshot 1" width="600"/></p> 
+<p align="center"><img src="./images/001.png" alt="Screenshot 1" width="600"/></p> 
+<p align="center"><img src="./images/001.1.png" alt="Screenshot 1" width="600"/></p> 
+<p align="center"><img src="./images/001.2.png" alt="Screenshot 1" width="600"/></p> 
 
 ---
 
@@ -50,23 +53,24 @@ HomeScreen.<br>
   • Atur ListTile: leading: Icon(Icons.camera_alt, color: Colors.blue);
   title: Text('Mulai Pindai Teks Baru'). <br>
   • Fungsi onTap harus menggunakan Navigator.push() untuk ke ScanScreen.<br>
-<p align="center"><img src="./images/01.png" alt="Screenshot 1" width="600"/></p>  
+<p align="center"><img src="./images/002.png" alt="Screenshot 1" width="600"/></p>  
 
  ### **2. Teks Utuh dan Navigasi Balik (15 Poin):** 
   • Di ResultScreen (lib/screens/result_screen.dart), hapus fungsi ocrText.replaceAll agar hasil teks ditampilkan dengan baris baru (\n) yang utuh.<br>
   • Tambahkan FloatingActionButton dengan ikon Icons.home.<br>
   • Ketika tombol ditekan, navigasi harus kembali langsung ke HomeScreen menggunakan **Navigator.pushAndRemoveUntil()** (atau metode yang setara)
   untuk menghapus semua halaman di atasnya dari stack navigasi.<br>
-  <p align="center"><img src="./images/01.1.png" alt="Screenshot 1" width="600"/></p> 
+  <p align="center"><img src="./images/002.1.png" alt="Screenshot 1" width="600"/></p>  
 
 ### **Perintah Commit Wajib (Soal 1)**
 Setelah Soal 1 selesai, lakukan commit dan push dengan pesan:<br>
   • git add lib/screens/home_screen.dart lib/screens/result_screen.dart<br>
   • git commit -m "UTS: Selesai Soal 1 - ListTile dan Navigasi Balik"<br>
   • git push origin main
-<p align="center"><img src="./images/01.png" alt="Screenshot 1" width="600"/></p>  
-<p align="center"><img src="./images/01.1.png" alt="Screenshot 1" width="600"/></p> 
-<p align="center"><img src="./images/01.2.png" alt="Screenshot 1" width="500"/></p>  
+<p align="center"><img src="./images/002.2.png" alt="Screenshot 1" width="600"/></p>
+
+ [Output Soal 1](https://drive.google.com/file/d/1YsgB8CCS-suz7JaPFJYA7Uc1_Wr08TUF/view?usp=drive_link)
+
 
 ---
 
@@ -78,19 +82,24 @@ Tujuan: Memperbaiki tampilan **loading** dan memberikan **feedback** error yang 
   • Isi: Di dalam Center, tampilkan Column berisi CircularProgressIndicator(Colors.yellow).<br>
   • Di bawah indikator, tambahkan Text(’Memuat Kamera... Harap tunggu.’,
   style: TextStyle(color: Colors.white, fontSize: 18)).<br>
-<p align="center"><img src="./images/02.png" alt="Screenshot 1" width="600"/></p>
+<p align="center"><img src="./images/003.png" alt="Screenshot 1" width="600"/></p>
 
 ### **2. Spesifikasi Pesan Error (20 Poin):**
   • Di fungsi _takePicture() pada ScanScreen, modifikasi blok catch (e) untuk mengubah pesan *error* pada SnackBar.<br>
   • Pesan SnackBar harus berbunyi: "Pemindaian Gagal! Periksa Izin Kamera atau coba lagi." (Hilangkan variabel *error* ($e)).<br>
-<p align="center"><img src="./images/02.png" alt="Screenshot 1" width="600"/></p>
+<p align="center"><img src="./images/003.1.png" alt="Screenshot 1" width="600"/></p>
 
 ### **Perintah Commit Wajib (Soal 2)**
   Setelah Soal 2 selesai, lakukan commit dan push dengan pesan:<br>
   • git add lib/screens/scan_screen.dart<br>
   • git commit -m "UTS: Selesai Soal 2 - Tampilan Loading dan Error"<br>
   • git push origin main<br>
-<p align="center"><img src="./images/02.2.png" alt="Screenshot 1" width="600"/></p>  
+<p align="center"><img src="./images/003.2.png" alt="Screenshot 1" width="600"/></p>  
+<p align="center"><img src="./images/003.3.png" alt="Screenshot 1" width="600"/></p>  
+<p align="center"><img src="./images/003.4.png" alt="Screenshot 1" width="600"/></p>  
+
+[Output Soal 2](https://drive.google.com/file/d/15KOc9FwICgeDT0Cc4mhDN1n_Rn-xvK7v/view?usp=drive_link)
+
 
 ---
 
@@ -100,51 +109,30 @@ Tujuan: Mengintegrasikan fitur membaca teks secara lisan menggunakan **plugin** 
   • Tambahkan *plugin* flutter_tts ke dalam file pubspec.yaml (gunakan versi
   terbaru yang kompatibel).<br>
   • Jalankan flutter pub get<br>
-<p align="center"><img src="./images/03.png" alt="Screenshot 1" width="600"/></p>   
+<p align="center"><img src="./images/004.png" alt="Screenshot 1" width="600"/></p>   
 
 ### **2. Konversi Widget dan Inisialisasi (10 Poin):**
   • Ubah ResultScreen dari StatelessWidget menjadi **StatefulWidget**. <br>
   • Di initState(), inisialisasi FlutterTts dan atur bahasa pembacaan menjadi Bahasa Indonesia.<br>
   • Implementasikan dispose() untuk menghentikan mesin TTS saat halaman
   ditutup.<br>
-<p align="center"><img src="./images/03.png" alt="Screenshot 1" width="600"/></p>
+<p align="center"><img src="./images/004.1.png" alt="Screenshot 1" width="600"/></p>
 
 ### **3. Fungsionalitas Pembacaan (15 Poin):**
   • Tambahkan FloatingActionButton kedua di ResultScreen (atau ganti AppBar
   dengan action button) dengan ikon Icons.volume_up.<br>
   • Ketika tombol ditekan, panggil fungsi speak() pada FlutterTts untuk membacakan seluruh isi ocrText.<br>
-<p align="center"><img src="./images/03.png" alt="Screenshot 1" width="600"/></p>
+<p align="center"><img src="./images/004.3.png" alt="Screenshot 1" width="600"/></p>
 
 ### **Perintah Commit Wajib (Soal 3)**
   Setelah Soal 3 selesai, lakukan commit dan push terakhir dengan pesan:
    • git add pubspec.yaml lib/screens/result_screen.dart
    • git commit -m "UTS: Selesai Soal 3 - Implementasi Flutter TTS"
    • git push origin main
-<p align="center"><img src="./images/04.png" alt="Screenshot 1" width="600"/></p>
+<p align="center"><img src="./images/004.4.png" alt="Screenshot 1" width="600"/></p>
 
----
+[Output Soal 3](https://drive.google.com/file/d/1ebRP0StG3zXVKvTU5PftCkLq57wpzTb-/view?usp=drive_link)
 
-### **OUTPUT**
-<p align="center">
-  <img src="./images/10.1.png" alt="Screenshot 1" width="700"/><br>
-  <b>'klik mulai scan teks'</b>
-
-
-<p align="center">
-  <img src="./images/10.2.png" alt="Screenshot 1" width="700"/><br>
-  <b>'klik ambil foto dan scan'</b>
-</p>
-
-
-<p align="center">
-  <img src="./images/10.3.png" alt="Screenshot 1" width="700"/><br>
-  <b>'hasil dari scan foto di atas adalah KA 3-5'</b>
-</p>
-
-<p align="center">
-  <img src="./images/10.3.png" alt="Screenshot 1" width="700"/><br>
-  <b>'hasil dari audio di atas adalah KA 3-5'</b>
-</p>
 
 ---
 
