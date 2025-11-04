@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import '/views/plan_screen.dart';
-import '/models/plan.dart'; 
-import '/provider/plan_provider.dart'; 
-void main() => runApp(MasterPlanApp());
+import 'package:master_plan/views/plan_screen.dart';
+import '/models/data_layer.dart'; 
 
 class MasterPlanApp extends StatelessWidget {
   const MasterPlanApp({super.key});
